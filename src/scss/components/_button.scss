@@ -1,0 +1,122 @@
+.btn {
+  //transition: all 0.2s;
+  &:link,
+  &:visited {
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 10rem;
+    transition: all 0.2s;
+    position: relative;
+    font-size: 1.6rem;
+  }
+
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    &:after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+
+  &:after {
+    content: "";
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+    &:after {
+      background-color: $color-white;
+    }
+  }
+
+  &--green {
+    background-color: $color-primary;
+    color: $color-white;
+    &:after {
+      background-color: $color-primary;
+    }
+  }
+
+  &--animated {
+    display: flex;
+    margin: 0 auto;
+    margin-top: 6rem;
+    width: fit-content;
+    padding: 1rem 3rem;
+    animation-name: moveTop;
+    animation-duration: 0.75s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: backwards;
+  }
+
+  &--link {
+    border-bottom: 1px;
+    border-color: $color-primary;
+    border-bottom-style: solid;
+    width: fit-content;
+    color: $color-primary;
+
+    //font-size: 1.75rem;
+    &:hover {
+      transform: translateY(0);
+      color: white;
+      a {
+        color: inherit;
+        background-color: $color-primary;
+        padding: 0.7rem 0.7rem 0.7rem 0.7rem;
+      }
+      span {
+        color: inherit;
+      }
+    }
+
+    a {
+      transition: all 0.2s;
+      color: inherit;
+      padding: 0.7rem 0.1rem 0.7rem 0.1rem;
+      font-size: 1.72rem;
+      text-decoration: none;
+      &:after {
+        content: "→";
+        width: 1px;
+        margin-left: 0.5rem;
+        font-size: 15px;
+      }
+    }
+  }
+
+  &--input {
+    border: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 10rem;
+    transition: all 0.2s;
+    position: relative;
+    font-size: 1.6rem;
+    /*  &::after {
+      content: "→";
+      width: 1px;
+      margin-left: 0.5rem;
+      font-size: 15px;
+    }*/
+  }
+}
+
+.animation {
+  &--prsbtn {
+    &:active {
+      transform: translate(-1px);
+      box-shadow: 0 5px 1rem rgba($color-black, 0.2);
+    }
+  }
+}

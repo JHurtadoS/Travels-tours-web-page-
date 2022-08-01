@@ -1,0 +1,128 @@
+.section-booking {
+  margin-top: 7rem;
+  padding: 8.5rem 12rem;
+  background-color: green;
+  &__container {
+    background-image: url("../img/nat-10.jpg");
+    background-position: center center;
+    background-size: cover;
+    min-height: 50rem;
+  }
+  &__form-container {
+    width: fit-content;
+    clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%);
+    background-color: rgba($color-white, 0.85);
+    padding: 4rem 4rem;
+    padding-right: 10rem;
+    min-height: inherit;
+    //display: flex;
+    //flex-direction: column;
+
+    .heading-secondary {
+      &:hover {
+        transform: none;
+        text-shadow: none;
+      }
+      margin-bottom: 4rem;
+    }
+    .section-booking__form {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 31.5rem;
+
+      &__input {
+        &--text {
+          display: flex;
+          flex-direction: column;
+          input {
+            height: 4rem;
+            width: 36rem;
+            background-color: #f1f1f1;
+            border: none;
+            padding: 1rem;
+            padding-top: 1.5rem;
+            transition: box-shadow 0.2s ease-in;
+            &:placeholder-shown + label {
+              opacity: 0;
+              visibility: hidden;
+            }
+            &:focus-visible {
+              outline-offset: unset;
+              outline: none;
+              box-shadow: 0px -1px 5px 0px rgba(0 0 0/20%),
+                0px 2px 0px 0px rgba($color-secondary-dark, 1);
+            }
+          }
+          label {
+            margin-top: 0.7rem;
+            margin-left: 2rem;
+            font-size: 1.1rem;
+            color: #333333;
+            font-weight: 700;
+            transition: all 0.3s;
+          }
+        }
+        &--radious {
+          margin-bottom: 1.5rem;
+          display: flex;
+          align-items: center;
+          margin-left: 0.5rem;
+          //width: 50%;
+          position: relative;
+          label {
+            padding: 0 1.5rem;
+          }
+          .input-radious-container {
+            display: flex;
+            align-items: center;
+
+            .input-radious {
+              height: 3rem;
+              width: 3rem;
+              border: 5px solid $color-primary;
+              border-radius: 50%;
+              display: inline-block;
+
+              position: relative;
+              input {
+                position: absolute;
+                top: 18%;
+                left: 21%;
+                cursor: pointer;
+                opacity: 0;
+                transition: all 0.3s;
+              }
+
+              input:checked {
+                opacity: 1;
+                &:after {
+                  content: "";
+                  position: absolute;
+                  height: 1.35rem;
+                  width: 1.35rem;
+                  border-radius: 50%;
+                  border: 5px solid $color-primary;
+                  display: block;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  background-color: $color-primary;
+                  //opacity: 0;
+                }
+              }
+            }
+          }
+        }
+        &--submit {
+          margin: 1.5rem 0;
+          margin-top: 0;
+          input {
+            height: 4.5rem;
+            width: 20rem;
+          }
+        }
+      }
+    }
+  }
+}

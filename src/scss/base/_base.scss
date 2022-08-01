@@ -1,0 +1,23 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  scroll-snap-type: center;
+}
+
+body {
+  padding: 3rem;
+  box-sizing: border-box;
+  background-color: #f7f7f7;
+}
+
+img {
+  width: 100%;
+}

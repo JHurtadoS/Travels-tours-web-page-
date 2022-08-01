@@ -1,0 +1,47 @@
+.section-about {
+  .heading-secondary {
+    margin: 0 auto;
+    margin-bottom: 3rem;
+  }
+  background-color: $color-grey-light-1;
+  padding: 25rem 3rem 10rem 3rem;
+
+  margin-top: -25vh;
+  &--rows {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 5rem;
+  }
+
+  &__row--images {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    &__contenedor {
+      margin-top: 2rem;
+      height: 35rem;
+      width: 100%;
+      position: relative;
+      &--img {
+        position: absolute;
+        width: 55%;
+        img {
+          box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
+          border-radius: 0.2rem;
+        }
+        &#img-1 {
+          left: 0;
+          top: -2rem;
+        }
+        &#img-2 {
+          right: 1rem;
+          top: 4rem;
+        }
+        &#img-3 {
+          top: 13rem;
+          left: 10rem;
+        }
+      }
+    }
+  }
+}

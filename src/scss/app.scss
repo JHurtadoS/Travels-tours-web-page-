@@ -1,0 +1,23 @@
+@import "abstracts/functions";
+@import "abstracts/variables";
+@import "abstracts/mixins";
+//@import "base/locomationScroll";
+
+@import "base/animations";
+@import "base/base";
+@import "base/typography.scss";
+@import "base/utilities";
+//@import "layouts/grid";
+
+@import "layouts/Home/header";
+@import "layouts/Home/about";
+@import "layouts/Home/tours";
+@import "layouts/Home/features";
+@import "layouts/Home/stories";
+@import "layouts/Home/booking";
+@import "layouts/Home/footer";
+
+@import "components/button";
+@import "components/icons";
+@import "components/pop-up";
+@import "components/navigation";

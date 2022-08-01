@@ -1,0 +1,59 @@
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  80% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveleft {
+  100% {
+    transform: translateX(-1000px);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+
+  80% {
+    transform: translateX(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveTop {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.animation-viewPort {
+  opacity: 1 !important;
+  transition: opacity 1.5s cubic-bezier(0.5, 0, 0, 1) 0.1s,
+    transform 1.5s cubic-bezier(0.5, 0, 0, 1) 0.1s !important;
+}
+
+/*.card-hover{
+  
+}*/

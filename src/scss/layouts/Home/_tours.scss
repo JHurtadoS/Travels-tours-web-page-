@@ -1,0 +1,62 @@
+.section-tours {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 14rem;
+  margin-bottom: 10rem;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url("/public/img/nat-4.jpg");
+  background-size: cover;
+  transform: skewY(-7deg);
+  & > * {
+    transform: skewY(7deg);
+  }
+  &__container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, 36rem);
+    column-gap: 2rem;
+
+    //transform: skewY(7deg);
+    &--row {
+      margin: auto 0;
+      display: block;
+      transition: all 0.2s;
+      padding: 2.5rem;
+      background-color: rgba($color: #ffffff, $alpha: 0.8);
+      &:hover {
+        transform: translateY(-1rem) scale(1.03);
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+      }
+      &__icon {
+        width: fit-content;
+        margin: 3rem auto;
+        margin-top: 1.5rem;
+        .icon {
+          &::before {
+            background-image: linear-gradient(
+              to right,
+              $color-primary-light,
+              $color-primary-dark
+            );
+            -webkit-background-clip: text;
+            color: transparent;
+            font-size: 7rem;
+          }
+        }
+      }
+      &__text {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        p {
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+value.addEventListener("mouseover", (e) => addSpinCard(value,frontSide,BackSide));
+
+
+  if (!hook.classList.contains("animation-spin")) {
+    console.log("add");
+    console.log(e);
+    setTimeout(() => {
+      hook.classList.toggle("animation-spin");
+    }, 1);
+  }
+}
+
+function removeSpinCard(hook, type) {
+  if (hook.classList.contains("animation-spin")) {
+    setTimeout(() => {
+      hook.classList.remove("animation-spin");
+      console.log(type);
+      console.log("remove");
+    }, 1);
+  }
+}

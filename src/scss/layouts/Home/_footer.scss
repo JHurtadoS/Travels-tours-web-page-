@@ -1,0 +1,36 @@
+.section-footer {
+  background-color: #333333;
+  padding: 10rem 11rem;
+  font-size: 1.4rem;
+  &__logo {
+    max-width: 15rem;
+    margin: 0 auto;
+    margin-bottom: 10rem;
+  }
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    &--links {
+      padding-top: 2rem;
+      border-top: solid 1px $color-grey-dark;
+      width: 45%;
+      display: inline-block;
+      a {
+        transition: filter 0.3s;
+        margin-left: 1rem;
+        padding: 0.5rem;
+        &:first-of-type {
+          margin-left: 0;
+        }
+        &:hover {
+          filter: drop-shadow(0 0 0.85px #ffffff);
+        }
+      }
+    }
+    &--copyright {
+      padding-top: 2rem;
+      border-top: solid 1px $color-grey-dark;
+      width: 45%;
+    }
+  }
+}
