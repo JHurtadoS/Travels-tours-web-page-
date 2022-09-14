@@ -1,3 +1,18 @@
 .u-margin-bottom-8 {
   margin-bottom: 8rem;
 }
+
+.stop_scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
+.stop_scrolling::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.stop_scrolling {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

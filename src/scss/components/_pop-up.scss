@@ -1,24 +1,27 @@
 .pop-up {
   display: block;
   position: fixed;
+  height: 100vh;
+  width: 100vw;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: -1;
-  height: 0;
-  width: 0;
-
-  transition: all 0.2s;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
 
   &__background {
     position: absolute;
     background-color: #1b1b1b;
+    background-color: rgba($color: #1b1b1b, $alpha: 0.95);
     height: inherit;
     width: inherit;
     z-index: -1;
   }
 
   &__content {
+    transition: all 0.3s;
     background-color: white;
     display: block;
     position: absolute;
@@ -46,21 +49,21 @@
   }
 
   &.open {
+    transition: all 0.3s;
     z-index: 200;
-    height: 100vh;
-    width: 100vw;
-    .pop-up__container {
-      height: 100%;
-      width: 100%;
-      //overflow: auto;
-    }
+    opacity: 1;
+
+    visibility: visible;
   }
   &__container {
-    position: relative;
-    height: 0;
-    width: 0;
     overflow: hidden;
-    transition: all 0.2s;
+    transition: all 0.3s;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
     &--info {
       align-items: flex-start;
       width: 80.7%;
