@@ -5,3 +5,15 @@
     clear: both;
   }
 }
+
+@mixin for-phone-only {
+  @media (max-width: 57.6rem) {
+    @content;
+  }
+}
+
+@mixin for-tablet-only {
+  @media (max-width: 1024rem) {
+    @content;
+  }
+}
