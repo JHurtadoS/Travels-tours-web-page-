@@ -7,13 +7,30 @@
 }
 
 @mixin for-phone-only {
-  @media (max-width: 57.6rem) {
+  @media (max-width: $phone-breakpoint) {
     @content;
   }
 }
 
-@mixin for-tablet-only {
-  @media (max-width: 1024rem) {
+@mixin for-tablet-portrait-only {
+  @media (max-width: $tablet-portrait-breakpoint) {
     @content;
+  }
+}
+
+@mixin for-tablet-landscape-only {
+  @media (max-width: $tablet-landscape-breakpoint) {
+    @content;
+  }
+}
+
+@mixin for-bigdesktop-only {
+  @media (min-width: $bigdesktop-breakpoint) {
+    @content;
+  }
+}
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
   }
 }

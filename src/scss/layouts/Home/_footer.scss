@@ -1,6 +1,10 @@
 .section-footer {
   background-color: #333333;
   padding: 10rem 11rem;
+  @include for-tablet-portrait-only {
+    padding: 5rem 6rem;
+    margin-bottom: 5rem;
+  }
   font-size: 1.4rem;
   &__logo {
     max-width: 15rem;
@@ -15,8 +19,15 @@
       border-top: solid 1px $color-grey-dark;
       width: 45%;
       display: inline-block;
+      @include for-tablet-portrait-only {
+        display: flex;
+        flex-direction: column;
+      }
       a {
         transition: filter 0.3s;
+        @include for-tablet-portrait-only {
+          margin: 0;
+        }
         margin-left: 1rem;
         padding: 0.5rem;
         &:first-of-type {

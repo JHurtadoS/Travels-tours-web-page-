@@ -32,6 +32,9 @@
     transform: translate(-50%, -50%);
     @include for-phone-only {
       text-align: center;
+      min-width: 450px;
+      display: flex;
+      flex-direction: column;
     }
   }
 }

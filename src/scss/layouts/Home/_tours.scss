@@ -2,7 +2,16 @@
   height: 100vh;
   display: flex;
   align-items: center;
+
   padding: 0 14rem;
+
+  @include for-tablet-landscape-only {
+    padding: 50rem 0;
+  }
+  @include for-tablet-portrait-only {
+    padding: 90rem 0;
+  }
+
   margin-bottom: 10rem;
   background-image: linear-gradient(
       to right bottom,
@@ -20,17 +29,41 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(1, 36rem);
+    place-content: center;
     column-gap: 2rem;
+    row-gap: 4rem;
+
+    @include for-tablet-landscape-only {
+      grid-template-columns: repeat(2, 30rem);
+      grid-template-rows: auto;
+    }
+    @include for-tablet-portrait-only {
+      grid-template-columns: repeat(1, 30rem);
+
+      // grid-template-rows: minmax(36rem, 1fr);
+    }
 
     //transform: skewY(7deg);
     &--row {
-      margin: auto 0;
-      display: block;
+      @include for-bigdesktop-only {
+        margin: 0 auto;
+      }
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       transition: all 0.2s;
       padding: 2.5rem;
+      @include for-tablet-landscape-only {
+        padding: 8.5rem 2.5rem;
+      }
+      @include for-tablet-portrait-only {
+        padding: 7.5rem 2.5rem;
+      }
       background-color: rgba($color: #ffffff, $alpha: 0.8);
       &:hover {
         transform: translateY(-1rem) scale(1.03);
+
         box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
       }
       &__icon {

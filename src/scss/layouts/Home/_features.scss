@@ -9,13 +9,27 @@
   }
 
   &__container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(1, 50rem);
-
+    //@include for-tablet-landscape-only {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    gap: 40px;
+    //}
     column-gap: 2rem;
-    padding: 0 10rem;
+    @include for-tablet-portrait-only {
+      display: grid;
+      grid-template-rows: repeat(1, 50rem);
+      padding: 0 10rem;
+    }
+
     &--row {
+      //@include for-tablet-landscape-only {
+      flex: 1 0 0;
+      min-width: 340px;
+      max-width: 340px;
+      display: block;
+      //}
+
       perspective: 150rem;
       position: relative;
       backface-visibility: hidden;

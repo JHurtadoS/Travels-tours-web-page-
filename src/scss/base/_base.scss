@@ -7,13 +7,26 @@
 }
 html {
   font-size: 62.5%;
-  scroll-behavior: smooth;
-  overflow-y: scroll;
-  scroll-snap-type: center;
+
+  @include for-bigdesktop-only {
+    font-size: 80%;
+  }
+
+  @include for-tablet-landscape-only {
+    font-size: 70%;
+  }
+
+  @include for-tablet-portrait-only {
+    font-size: 60%;
+  }
+  @include for-phone-only {
+    font-size: 50%;
+  }
 }
 
 body {
   padding: 3rem;
+  overflow-x: hidden;
   @include for-phone-only {
     padding: 0rem;
   }

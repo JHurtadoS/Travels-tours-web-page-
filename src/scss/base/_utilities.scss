@@ -16,3 +16,35 @@
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+.section-tours__container--row {
+  &.card-right {
+    &.x8 {
+      transform: translateX(-8rem);
+      &:hover {
+        transform: translateY(-1rem) translateX(-8rem) scale(1.03);
+      }
+    }
+    &.x4 {
+      transform: translateX(-4rem);
+      &:hover {
+        transform: translateY(-1rem) translateX(-4rem) scale(1.03);
+      }
+    }
+  }
+
+  &.card-left {
+    &.x8 {
+      transform: translateX(8rem);
+      &:hover {
+        transform: translateY(-1rem) translateX(8rem) scale(1.03);
+      }
+    }
+    &.x4 {
+      transform: translateX(4rem);
+      &:hover {
+        transform: translateY(-1rem) translateX(4rem) scale(1.03);
+      }
+    }
+  }
+}

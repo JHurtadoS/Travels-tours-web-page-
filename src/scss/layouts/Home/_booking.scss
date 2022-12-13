@@ -1,6 +1,9 @@
 .section-booking {
   margin-top: 7rem;
   padding: 8.5rem 12rem;
+  @include for-tablet-portrait-only {
+    padding: 8.5rem 3rem;
+  }
   background-color: green;
   &__container {
     background-image: url("../img/nat-10.jpg");
@@ -38,7 +41,7 @@
           input {
             height: 4rem;
             width: 36rem;
-            background-color: #f1f1f1;
+            background-color: #f9e9e9;
             border: none;
             padding: 1rem;
             padding-top: 1.5rem;

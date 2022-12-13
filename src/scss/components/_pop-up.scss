@@ -23,7 +23,7 @@
   &__content {
     transition: all 0.3s;
     background-color: white;
-    display: block;
+    //display: block;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -34,6 +34,15 @@
     width: 75%;
     height: 70%;
     padding-right: 5rem;
+
+    @include for-tablet-portrait-only {
+      padding: initial;
+      grid-template-columns: 1fr;
+      grid-template-rows: 77.777% 33.333%;
+      row-gap: 1rem;
+      transform: translate(-50%, -56%);
+      height: 75%;
+    }
 
     .icon-close {
       &:hover {
@@ -70,6 +79,11 @@
       display: flex;
       justify-content: center;
       flex-direction: column;
+      @include for-tablet-portrait-only {
+        width: initial;
+        padding: 0 3rem;
+        //padding-top: 10rem;
+      }
       .heading-secondary {
         text-align: left;
         width: auto;
@@ -90,14 +104,26 @@
         column-rule: 1px solid $color-grey-light-2;
         font-size: 1.4rem;
         margin-bottom: 3rem;
+        @include for-tablet-portrait-only {
+          column-gap: unset;
+          column-count: unset;
+          column-rule: unset;
+        }
       }
     }
     &--images {
       display: flex;
       flex-direction: column;
+      @include for-tablet-portrait-only {
+        flex-direction: row;
+        grid-row: 2/3;
+      }
       img {
         display: block;
         height: 100%;
+        @include for-tablet-portrait-only {
+          width: 50%;
+        }
       }
     }
   }

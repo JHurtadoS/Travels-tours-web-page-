@@ -20,7 +20,47 @@ document.addEventListener("DOMContentLoaded", (e) => {
   });
 
   pop_up_show();
+  fixPositionTours();
 });
+
+const fixPositionTours = () => {
+  window.addEventListener("resize", () => {
+    const toursSection = document.querySelector(".section-tours");
+    const md1 = window.matchMedia("(max-width: 900px)");
+    const md2 = window.matchMedia("(max-width: 600px)");
+    const cards = toursSection.querySelectorAll(
+      ".section-tours__container--row"
+    );
+    cards.forEach((e, index) => {
+      if (md1.matches || md2.matches) {
+        if (index % 2 == 0) {
+          e.classList.add("card-right");
+        } else {
+          e.classList.add("card-left");
+        }
+      } else {
+        if (index % 2 == 0) {
+          e.classList.remove("card-right");
+        } else {
+          e.classList.remove("card-left");
+        }
+      }
+
+      if (md2.matches) {
+        e.classList.add("x4");
+        e.classList.remove("x8");
+        console.log("hey 1");
+      } else if (md1.matches) {
+        console.log("hey 2");
+        e.classList.add("x8");
+        e.classList.remove("x4");
+      } else {
+        e.classList.remove("x4");
+        e.classList.remove("x8");
+      }
+    });
+  });
+};
 
 function pop_up_show() {
   const pop_ups = document.querySelectorAll(".pop-up");
@@ -55,54 +95,7 @@ function pop_up_show() {
     });
   });
 }
-/*
-function stopscroll(action) {
-  var keys = { 37: 1, 38: 1, 39: 1, 40: 1 };
 
-  function preventDefault(e) {
-    e.preventDefault();
-  }
-
-  function preventDefaultForScrollKeys(e) {
-    if (keys[e.keyCode]) {
-      preventDefault(e);
-      return false;
-    }
-  }
-
-  // modern Chrome requires { passive: false } when adding event
-  var supportsPassive = false;
-  try {
-    window.addEventListener(
-      "test",
-      null,
-      Object.defineProperty({}, "passive", {
-        get: function () {
-          supportsPassive = true;
-        },
-      })
-    );
-  } catch (e) {}
-
-  var wheelOpt = supportsPassive ? { passive: false } : false;
-  var wheelEvent =
-    "onwheel" in document.createElement("div") ? "wheel" : "mousewheel";
-
-  if (action == "disable") {
-    window.addEventListener("DOMMouseScroll", preventDefault, false); // older FF
-    window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
-    window.addEventListener("touchmove", preventDefault, wheelOpt); // mobile
-    window.addEventListener("keydown", preventDefaultForScrollKeys, false);
-    console.log("here1");
-  } else if (action == "enable") {
-    console.log("here2");
-    window.removeEventListener("DOMMouseScroll", preventDefault, false);
-    window.removeEventListener(wheelEvent, preventDefault, wheelOpt);
-    window.removeEventListener("touchmove", preventDefault, wheelOpt);
-    window.removeEventListener("keydown", preventDefaultForScrollKeys, false);
-  }
-}
-*/
 function disableScroll() {
   window.onscroll = () => {
     window.scroll(0, 0);
